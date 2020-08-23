@@ -25,7 +25,7 @@ Use Data/Set action to create the object.
 ## Step 3. Discord API Call
 ### Communication/HTTP-request
 #### Properties:
-> * _url_:      NOTE: Paste the discord webhook created from step 2.
+> * _url_:      NOTE: Paste the discord webhook
 > * _Method_:   POST
 > * _Body_:     Contents of what is being posted to discord. NOTE: May need to specify the content type as application json.  { “Content-Type”: “Application/JSON” }
 > * _Header_:   blank
