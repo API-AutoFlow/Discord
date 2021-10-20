@@ -1,1 +1,111 @@
-{"Data":[],"File":[],"Flow":[],"FlowTest":[],"Inbound":[{"id":"<1598171767972585000.0.3284699661.1334312963.63655>","value":{"name":"http server","port":1111,"tls":false,"type":"http server"}}],"InboundEndpoint":[{"id":"<1598171785521496000.0.3284699661.1334312962.79626>","index":["<1598171767972585000.0.3284699661.1334312963.63655>"],"value":{"default-test":"<1598171785521914000.0.3284699661.1334312965.80782>","method":"GET","name":"endpoint","path":"/discord","serve-files":null,"type":"endpoint"}},{"id":"<1598171767972597000.0.3284699661.1334312963.63658>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}},{"id":"<1598171767972594000.0.3284699661.1334312963.63657>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}},{"id":"<1598171767972591000.0.3284699661.1334312963.63656>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}},{"id":"<1598171767972600000.0.3284699661.1334312963.63659>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}},{"id":"<1598171767972605000.0.3284699661.1334312963.63661>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}},{"id":"<1598171767972607000.0.3284699661.1334312963.63662>","index":[null],"value":{"default-test":null,"method":"GET","name":"endpoint","path":"/api/user/info","type":"endpoint"}}],"InboundEndpointFlow":[{"id":"<1598171785521496000.0.3284699661.1334312962.79626>","index":["<1598171767972585000.0.3284699661.1334312963.63655>"],"value":[{"$action":"data/set","at-location":{"__LDATA__":["result"]},"value":{"content":{"__LDATA__":["request","body"]}}},{"$action":"communication/http-request","body":{"__LDATA__":["result"]},"header":{"Content-type":"application/json"},"method":"POST","mock-result":{"body":"","headers":{},"status-code":200},"output-location":{"__LDATA__":["response","body"]},"query":{},"timeout":5000,"url":"<discord_webhook_URL>","use-mock-result":false}]},{"id":"<1598171767972597000.0.3284699661.1334312963.63658>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]},{"id":"<1598171767972594000.0.3284699661.1334312963.63657>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]},{"id":"<1598171767972591000.0.3284699661.1334312963.63656>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]},{"id":"<1598171767972600000.0.3284699661.1334312963.63659>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]},{"id":null,"index":[null],"value":[{"$action":"array/chunk","array":{"__LDATA__":[]},"count":0,"leftover":[],"output-location":{"__LDATA__":[]},"step":0}]},{"id":"<1598171767972605000.0.3284699661.1334312963.63661>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]},{"id":"<1598171767972607000.0.3284699661.1334312963.63662>","index":[null],"value":[{"$action":"communication/http-request","body":"","header":{},"method":"GET","query":{},"response-target":{"__LDATA__":["result"]},"url":"http://192.168.50.194:1111/service1"},{"$action":"data/set","target":{"__LDATA__":["response","body"]},"value":"ABC"}]}],"InboundEndpointTest":[{"id":"<1598171785521914000.0.3284699661.1334312965.80782>","index":["<1598171767972585000.0.3284699661.1334312963.63655>","<1598171785521496000.0.3284699661.1334312962.79626>"],"value":{"name":"default-test-input","request":{"body":"","header":{},"path":{},"query":{}}}}],"Schema":[],"SchemaEntry":[],"Timer":[],"TimerFlow":[],"Variable":[]}
+{
+  "$product": {
+    "deployment_mode": "SOLO",
+    "name": "API AutoFlow",
+    "version": "2.1.16"
+  },
+  "Flow": [
+    {
+      "default-test": "<1598171785521914000.0.3284699661.1334312965.80782>",
+      "flow": [
+        {
+          "$action": "data/set",
+          "at-location": {
+            "__LDATA__": [
+              "result"
+            ]
+          },
+          "value": {
+            "content": {
+              "__LDATA__": [
+                "request",
+                "body"
+              ]
+            }
+          }
+        },
+        {
+          "$action": "communication/http-request",
+          "body": {
+            "__LDATA__": [
+              "result"
+            ]
+          },
+          "header": {
+            "Content-type": "application/json"
+          },
+          "method": "POST",
+          "mock-result": {
+            "body": "",
+            "headers": {},
+            "status-code": 200
+          },
+          "output-location": {
+            "__LDATA__": [
+              "response",
+              "body"
+            ]
+          },
+          "query": {},
+          "timeout": 5000,
+          "url": "<discord_webhook_URL>",
+          "use-mock-result": false
+        }
+      ],
+      "id": "b4f83fd0-3fcc-4949-b4c2-5d54143d28b9"
+    }
+  ],
+  "Inbound": [
+    {
+      "id": "<1598171767972585000.0.3284699661.1334312963.63655>",
+      "port": 1111,
+      "tls": false,
+      "type": "http server"
+    }
+  ],
+  "InboundEndpoint": [
+    {
+      "default-test": "<1598171785521914000.0.3284699661.1334312965.80782>",
+      "id": "<1598171785521496000.0.3284699661.1334312962.79626>",
+      "method": "GET",
+      "path": "/discord",
+      "serve-files": null,
+      "type": "endpoint"
+    }
+  ],
+  "ResourceInfo": [
+    {
+      "id": "<1598171785521914000.0.3284699661.1334312965.80782>",
+      "parentId": "b4f83fd0-3fcc-4949-b4c2-5d54143d28b9",
+      "resourceType": "Test",
+      "title": "default-test-input"
+    },
+    {
+      "id": "b4f83fd0-3fcc-4949-b4c2-5d54143d28b9",
+      "parentId": "<1598171785521496000.0.3284699661.1334312962.79626>",
+      "resourceType": "Flow"
+    },
+    {
+      "id": "<1598171785521496000.0.3284699661.1334312962.79626>",
+      "parentId": "<1598171767972585000.0.3284699661.1334312963.63655>",
+      "resourceType": "InboundEndpoint",
+      "title": "endpoint"
+    },
+    {
+      "id": "<1598171767972585000.0.3284699661.1334312963.63655>",
+      "resourceType": "Inbound",
+      "title": "http server"
+    }
+  ],
+  "Test": [
+    {
+      "id": "<1598171785521914000.0.3284699661.1334312965.80782>",
+      "value": {
+        "body": "",
+        "header": {},
+        "path": {},
+        "query": {}
+      }
+    }
+  ]
+}
